@@ -19,3 +19,4 @@ app.get('/',(req,res)=>{
 
 //START THE EXPRESS APP
 app.listen(port, ()=> console.log("Server Started",port))
+SERVER_MODE=True 
