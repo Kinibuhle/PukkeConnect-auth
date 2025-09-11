@@ -1,22 +1,16 @@
-import express from 'express'
-import cors from 'cors'
-import 'dotenv/config'
+import express from "express";
+import dotenv from "dotenv";
 
-//app config
-const app = express()
-const port = process.env.PORT || 4000
+dotenv.config();
+const app = express();
+const PORT = process.env.PORT || 4000;
 
+app.use(express.json());
 
-//MIDDLEWARES
-app.use(express.json()) //act as the middleware when the request is published  
-app.use(cors())       //it allows frontend to connect to backend
+app.get("/", (req, res) => {
+  res.send("Server is running!");
+});
 
-
-//api endpoint
-app.get('/',(req,res)=>{
-    res.send('API WORKING')
-})
-
-//START THE EXPRESS APP
-app.listen(port, ()=> console.log("Server Started",port))
-SERVER_MODE=True 
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
