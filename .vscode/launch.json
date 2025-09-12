@@ -18,6 +18,12 @@
             "name": "Launch Chrome against localhost",
             "url": "http://localhost:4000",
             "webRoot": "${workspaceFolder}"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Backend",
+            "program": "${workspaceFolder}/Backend/server.js"
         }
     ]
 }
