@@ -19,10 +19,10 @@ POST http://localhost:4000/api/auth/login
 Content-Type: application/json
 
 {
-  "email": "mosa@mynwu.ac.za",
+  "email":"1234567@mynwu.ac.za",
   "password": "Pa$$w0rd"
 }
 
 //PROTECTED PROFILE (JWT OR SESSION)
 GET http://localhost:4000/api/auth/profile-any
-Authorization: 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjEyMzQ1NjdAbXlud3UuYWMuemEiLCJGTmFtZSI6IkVsbGEiLCJMTmFtZSI6IkJyb3duIiwiZmllbGQiOiJDb21wdXRlciBTY2llbmNlIiwiY2FtcHVzIjoiTWFmaWtlbmciLCJpYXQiOjE3NTc2NjI2NDMsImV4cCI6MTc1NzY2NjI0M30.4tO1_UF3pELt0Id_Ji4t7TUzO4_VbCgayfEVmyp64t0
