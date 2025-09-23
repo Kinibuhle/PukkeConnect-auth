@@ -77,6 +77,29 @@ CREATE TABLE EVENTS (
         REFERENCES SOCIETY(society_id)
         ON DELETE CASCADE
 );
+-- ================================
+-- Create EVENT_RSVP table
+-- ================================
+CREATE TABLE EVENT_RSVP (
+    id SERIAL PRIMARY KEY,
+    status VARCHAR(50) NOT NULL, -- e.g., 'going', 'interested', 'waitlisted'
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    -- Foreign keys
+    event_id INT NOT NULL,
+    student_number INT NOT NULL,
+
+    CONSTRAINT fk_rsvp_event FOREIGN KEY (event_id)
+        REFERENCES EVENTS(event_id)
+        ON DELETE CASCADE,
+
+    CONSTRAINT fk_rsvp_student FOREIGN KEY (student_number)
+        REFERENCES STUDENT_USER(student_number)
+        ON DELETE CASCADE,
+
+    CONSTRAINT unique_event_student UNIQUE (event_id, student_number)
+);
 
 -- =========================
 --2 ALTER TABLES
